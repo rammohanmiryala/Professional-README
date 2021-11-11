@@ -4,7 +4,6 @@
  function renderLicenseBadge(license) {
    console.log(license);
    let yourLicense = ''
-   let licenseType = license
    let licenseType = license;
    if (licenseType === 'MIT') {
     yourLicense =`![![Generic badge](https://img.shields.io/badge/License-MIT-yellow.svg)](https://shields.io/)`
