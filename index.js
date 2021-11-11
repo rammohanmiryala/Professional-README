@@ -10,6 +10,18 @@ const generateMarkdown = require("../Professional-README/utils/generateMarkdown.
 const questions = [{
 
     type: "input",
+    name: "username",
+    message: "What is the  github username?",
+  },
+  {
+
+    type: "input",
+    name: "email",
+    message: "What is the  email address?",
+  },
+  {
+
+    type: "input",
     name: "title",
     message: "What is the  project title?",
   },
@@ -19,61 +31,63 @@ const questions = [{
     message: "write project description ",
   },
   {
+    type: "list",
+    message: "Choose a license for your projec.",
+    choices: [
+      "Apache_2.0",
+      "MIT",
+      "GPLv3",
+      "Boost_1.0",
+      "none"
+    ],
+    name: "license",
+  },
+  
+  {
     type: "input",
-    message: "If applicable, describe the steps required to install your project for the Installation section.",
+    message: "what type of commond is used to install dependencies.",
     name: "installation",
   },
   {
     type: "input",
-    message: "Provide instructions and examples of your project in use for the Usage section.",
-    name: "usage",
-  },
-  {
-    type: "input",
-    message: "If applicable, provide guidelines on how other developers can contribute to your project.",
-    name: "contributing",
-  },
-  {
-    type: "input",
-    message: "If applicable, provide any tests written for your application and provide examples on how to run them.",
+    message: "what type of commond is used to run tests.",
     name: "tests",
   },
   {
-    type: "list",
-    message: "Choose a license for your project.",
-    choices: [
-      "GNU AGPLv3",
-      "GNU GPLv3",
-      "GNU LGPLv3",
-      "Mozilla Public License 2.0",
-      "Apache License 2.0",
-      "MIT License",
-      "Boost Software License 1.0",
-      "The Unlicense",
-    ],
-    name: "license",
+    type: "input",
+    message: "what does user need to know about this repo.",
+    name: "repo",
+  },
+  {
+    type: "input",
+    message: "what does user need to know about contributing to this repo.",
+    name: "contributing",
   }
 
 ]
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) => {
-    if (err) {
-      return console.log(err);
-    } else {
-      console.log("Successfull");
-    }
-  })
-}
+// function writeToFile(fileName, data) {
+//   fs.writeFile(fileName, data, (err) => {
+//     if (err) {
+//       return console.log(err);
+//     } else {
+//       console.log("Successfull");
+//     }
+//   })
+// }
 
 
 // TODO: Create a function to initialize app
 function init() {
   const userResponses = inquirer.prompt(questions)
-    
-  .then((userResponses) => {
-      fs.writeFile('readme.md', generateMarkdown(userResponses), (err) =>
+  
+
+    .then((userResponses) => {
+      // const userInfo = api.getUser(userResponses);
+      const markdown = generateMarkdown(userResponses);
+
+      fs.writeFile('readme.md', markdown, (err) =>
         err ? console.log(err) : console.log('Successfully created README.md!')
       );
     });
