@@ -1,40 +1,45 @@
  //  TODO: Create a function that returns a license badge based on which license is passed in
  //  If there is no license, return an empty string
- function renderLicenseBadge(license) {
-   let licenseType = license; // i think this is problem #1
-   let yourLicense = ''
-   if (licenseType === 'MIT') {
-     yourLicense = `![![Generic badge](https://img.shields.io/badge/License-MIT-yellow.svg)](https://shields.io/)`
-   } else if (licenseType === 'GPLv3') {
-     yourLicense = `![![Generic badge](https://img.shields.io/badge/License-GPLv3-yellow.svg)](https://shields.io/)`
-   } else if (licenseType === 'GPL') {
-     yourLicense = `![![Generic badge](https://img.shields.io/badge/License-GPL-yellow.svg)](https://shields.io/)`
-   } else if (licenseType === 'Boost_1.0') {
-     yourLicense = `![![Generic badge](https://img.shields.io/badge/License-Boost_1.0-yellow.svg)](https://shields.io/)`
-   } else {
 
-   }
-   return yourLicense;
+ function renderLicenseBadge(license) {
+   console.log(license);
+   let yourLicense = ''
+   licenseType = license
+   let licenseType = license;
+   if (licenseType === 'MIT') {
+    yourLicense =`![![Generic badge](https://img.shields.io/badge/License-MIT-yellow.svg)](https://shields.io/)`
+   } else if (licenseType === 'GPLv3') {
+    yourLicense =`![![Generic badge](https://img.shields.io/badge/License-GPLv3-yellow.svg)](https://shields.io/)`
+   } else if (licenseType === 'GPL') {
+    yourLicense =`![![Generic badge](https://img.shields.io/badge/License-GPL-yellow.svg)](https://shields.io/)`
+   } else if (licenseType === 'Boost_1.0') {
+    yourLicense =`![![Generic badge](https://img.shields.io/badge/License-Boost_1.0-yellow.svg)](https://shields.io/)`
+   } else {}
+   return yourLicense
  };
 
- // TODO: Create a function that returns the license link
- // If there is no license, return an empty string
- function renderLicenseLink(license) {
+//  // TODO: Create a function that returns the license link
+//  // If there is no license, return an empty string
+//  function renderLicenseLink(license) {
 
+//    console.log(licenseType);
 
- }
+//  }
 
- // TODO: Create a function that returns the license section of README
- // If there is no license, return an empty string
- function renderLicenseSection(license) {
+//  // TODO: Create a function that returns the license section of README
+//  // If there is no license, return an empty string
+//  function renderLicenseSection(license) {
 
- }
+//  }
 
 
 
  // TODO: Create a function to generate markdown for README
 
  function generateMarkdown(userResponses) {
+
+
+
 
    // Generate Table of Contents conditionally based on userResponses
    let draftToC = `## Table of Contents`;
@@ -130,18 +135,23 @@
 
 
    // License section is required
+
+
    draftMarkdown +=
      `
-  
   ## License
-  
   ${userResponses.license}
-  `;
+  
+  `
+  `${renderLicenseBadge(userResponses.license)}`
+
+   ;
    // Questions / About Developer section
    let draftDev =
      `
   ---
   
+
   ## Questions?
 
   For any questions, please contact me with the information below:

@@ -42,7 +42,7 @@ const questions = [{
     ],
     name: "license",
   },
-  
+
   {
     type: "input",
     message: "what type of commond is used to install dependencies.",
@@ -81,7 +81,7 @@ const questions = [{
 // TODO: Create a function to initialize app
 function init() {
   const userResponses = inquirer.prompt(questions)
-  
+
 
     .then((userResponses) => {
       // const userInfo = api.getUser(userResponses);
