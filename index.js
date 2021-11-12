@@ -61,8 +61,8 @@ const questions = [{
   
   {
     type: "input",
-    message: "The contributing.",
-    name: "contributing",
+    message: "What can you  contribute.",
+    name: "Contribution",
   }
 
 ]
