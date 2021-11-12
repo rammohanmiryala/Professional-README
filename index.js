@@ -50,44 +50,32 @@ const questions = [{
   },
   {
     type: "input",
+    message: "what does user need to know to run the application?.",
+    name: "usage",
+  },
+  {
+    type: "input",
     message: "what type of commond is used to run tests.",
     name: "tests",
   },
+  
   {
     type: "input",
-    message: "what does user need to know about this repo.",
-    name: "repo",
-  },
-  {
-    type: "input",
-    message: "what does user need to know about contributing to this repo.",
+    message: "The contributing.",
     name: "contributing",
   }
 
 ]
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//   fs.writeFile(fileName, data, (err) => {
-//     if (err) {
-//       return console.log(err);
-//     } else {
-//       console.log("Successfull");
-//     }
-//   })
-// }
-
 
 // TODO: Create a function to initialize app
 function init() {
   const userResponses = inquirer.prompt(questions)
-
-
     .then((userResponses) => {
       // const userInfo = api.getUser(userResponses);
       const markdown = generateMarkdown(userResponses);
-
-      fs.writeFile('readme.md', markdown, (err) =>
+      fs.writeFile('./readme/Readme.md', markdown,
+      (err) =>
         err ? console.log(err) : console.log('Successfully created README.md!')
       );
     });
