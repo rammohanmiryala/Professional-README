@@ -10,7 +10,7 @@ video : https://youtu.be/j0AGZQ62cM8
 ## Important Links
 Github: https://github.com/rammohanmiryala/Professional-README.git
 
-[![README](generated readme:](./Readme/Readme.md)
+
 
 
 
